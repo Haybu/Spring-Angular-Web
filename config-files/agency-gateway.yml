@@ -1,0 +1,21 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /
+  compression:
+    enabled: true
+    mime-types: application/json,text/css,application/javascript
+    min-response-size: 2048
+
+zuul:
+  prefix: /api
+  ignoredServices: '*'
+  routes:
+    flights:
+      path: /flights/**
+      serviceId: flights-service
+      stripPrefix: false
+    reservations:
+      path: /reservations/**
+      serviceId: reservations-service
+      stripPrefix: false

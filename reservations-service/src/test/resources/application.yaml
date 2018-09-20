@@ -1,0 +1,15 @@
+stubrunner:
+  idsToServiceIds:
+    # remove::start[]
+    flights-service: flights-service
+    # remove::end[]
+
+spring:
+  cloud:
+    config:
+      enabled: false
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
